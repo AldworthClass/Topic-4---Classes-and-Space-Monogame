@@ -34,7 +34,25 @@ namespace Topic_4___Classes_and_Space_Monogame
                 _location.X = _generator.Next(window.Width, window.Width + 10);
                 _location.Y = _generator.Next(window.Height);
             }
-            
+
+        }
+
+        public int X
+        {
+            get { return _location.X; }
+            set { _location.X = value; }
+        }
+
+        public int Y
+        {
+            get { return _location.Y; }
+            set { _location.Y = value; }
+        }
+
+        public Rectangle Location
+        {
+            get { return _location; }
+            set { _location = value; }
         }
 
         public void SpeedUp()

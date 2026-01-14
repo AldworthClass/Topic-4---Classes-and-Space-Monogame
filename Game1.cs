@@ -32,7 +32,6 @@ namespace Topic_4___Classes_and_Space_Monogame
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
-
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
@@ -44,12 +43,7 @@ namespace Topic_4___Classes_and_Space_Monogame
             shipRect = new Rectangle(50, 250, 150, 40);
             generator = new Random();
 
-           
-
-            //star1 = new Star(starTexture, new Rectangle(100, 100, 2, 2), new Vector2(-2, 0));
-
             base.Initialize();
-            star1 = new Star(starTexture, new Rectangle(100, 100, 2, 2), new Vector2(-2, 0));
 
             stars = new List<Star>();
             for (int i = 0; i < 150; i++)
@@ -86,6 +80,7 @@ namespace Topic_4___Classes_and_Space_Monogame
                 Exit();
             previousKeyboardState = keyboardState;
             keyboardState = Keyboard.GetState();
+
             // TODO: Add your update logic here
 
             if (keyboardState.IsKeyDown(Keys.Space) && previousKeyboardState.IsKeyUp(Keys.Space))
@@ -102,11 +97,8 @@ namespace Topic_4___Classes_and_Space_Monogame
 
             foreach (Star star in stars)
             {
-                star.Update(window);
+                star.Update(window);                    
             }
-
-            
-
             base.Update(gameTime);
         }
 
@@ -121,7 +113,6 @@ namespace Topic_4___Classes_and_Space_Monogame
                 star.Draw(_spriteBatch);
 
             _spriteBatch.Draw(shipTexture, shipRect, Color.White);
-
             _spriteBatch.End();
 
             base.Draw(gameTime);

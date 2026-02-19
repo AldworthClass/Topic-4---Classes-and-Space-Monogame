@@ -82,19 +82,6 @@ namespace Topic_4___Classes_and_Space_Monogame
             keyboardState = Keyboard.GetState();
 
             // TODO: Add your update logic here
-
-            if (keyboardState.IsKeyDown(Keys.Space) && previousKeyboardState.IsKeyUp(Keys.Space))
-            {
-                foreach (Star star in stars)
-                    star.SpeedUp();
-            }
-
-            if (keyboardState.IsKeyDown(Keys.LeftShift) && previousKeyboardState.IsKeyUp(Keys.LeftShift))
-            {
-                foreach (Star star in stars)
-                    star.SlowDown();
-            }
-
             foreach (Star star in stars)
             {
                 star.Update(window);                    

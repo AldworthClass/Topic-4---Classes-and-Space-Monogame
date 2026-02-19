@@ -13,7 +13,6 @@ namespace Topic_4___Classes_and_Space_Monogame
         private Rectangle _location;
         private Vector2 _speed;
         private Texture2D _texture;
-        private Color _color;
         private Random _generator;
 
         public Star(Texture2D texture, Rectangle location, Vector2 speed)
@@ -21,7 +20,6 @@ namespace Topic_4___Classes_and_Space_Monogame
             _location = location;
             _speed = speed;
             _texture = texture;
-            _color = Color.White;
             _generator = new Random();
         }
 
@@ -55,17 +53,7 @@ namespace Topic_4___Classes_and_Space_Monogame
             set { _location = value; }
         }
 
-        public void SpeedUp()
-        {
-            
-            _speed.X -= 1;
-        }
-        public void SlowDown()
-        {
-            if (_speed.X < -_location.Width)
-                _speed.X += 1;
-        }
-
+        
         public float Speed
         {
             get { return _speed.X; }
